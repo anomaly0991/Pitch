@@ -5,19 +5,177 @@ Website: http://themegret.com
 
 ============================== */
 
-/* ==================== CSS Structure ==================== 
+
+
+/* Amber Additional .css
+===============*/
+.pagehead {
+	float: right;
+	padding: 20px;
+}
+
+/*pitches*/
+
+.pitchcontainer {
+	height: 800px;
+}
+.pitch {
+	float: left;
+	width:33%;
+	height: 400px;
+	min-width: 300px;
+	border-style: dotted;
+	color: #ffff;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: 20px
+
+
+}
+
+.pitch2 {
+	float: left;
+	width:33%;
+	min-width: 300px;
+	border-style: dotted;
+	color: #ffff;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+.pitch3 {
+	float: left;
+	width:33%;
+	min-width: 300px;
+	border-style: dotted;
+	color: #ffff;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+.pitchpic{
+	width: 250px;
+	position: relative;
+	padding-left: 10px;
+	padding-top: 20px;
+	padding-right: 10px;
+}
+
+.pitch-content{
+	padding-left: 20px;
+}
+
+/* Search Bar*/
+
+.flexsearch--wrapper {
+	height: auto;
+	width: auto;
+	max-width: 100%;
+	overflow: hidden;
+	background: transparent;
+	margin: 0;
+	position: static;
+}
+
+.flexsearch--form {
+	overflow: hidden;
+	position: relative;
+}
+
+.flexsearch--input-wrapper {
+	padding: auto; /* Right padding for submit button width */
+	overflow: hidden;
+}
+
+.flexsearch--input {
+  width: 150px;
+}
+
+.flexsearch {
+  padding:auto; /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+ 	height: 40px;
+
+	border-color: #888;
+  border-radius: 20px; /* (height/2) + border-width */
+  border-style: solid;
+	border-width: 3px;
+  margin-top: 5px;
+  color: #ffffff;
+  font-family: 'Helvetica', sans-serif;
+	font-size: 26px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+/*arrow*/
+.flexsearch--submit {
+  position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 30px;
+	height: 30px;
+  padding: 0;
+  border: none;
+	margin-top: 10px; /* margin-top + border-width */
+  margin-right: 5px; /* border-width */
+	background: transparent;
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+ 	color: #333;
+}
+
+.flexsearch--submit:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: #888;
+}
+
+input:-moz-placeholder {
+  color: #888
+}
+
+
+/**************
+
+
+
+
+
+
+/* ==================== CSS Structure ====================
 1. COMMON STYLES
 	- Reset Styles
 	- Common Classes
 	- Pre Loader Styles
-	
+
 2. HTML ELEMENTS STYLE
 	- Button Styles
 
 3. HEADER SECTION
 	- Main Navigation Styles
 	- Home section
-	
+
 4. FEATURE SECTION
 5. SERVICE SECTION
 6. STEP SECTION
@@ -178,7 +336,7 @@ font-weight: 700;
 	display: inline-block;
 	margin-top: 0;
 	padding: 8px 0;
-	
+
 }
 
 .section-overlay {
@@ -1085,4 +1243,3 @@ margin-right: 8px;
 .copyright {
 	padding-top: 15px;
 }
-
