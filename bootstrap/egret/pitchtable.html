@@ -103,72 +103,27 @@
 						<div class="col-md-10 step-details">
             </div>
           </div>
+
+          <div class="pagehead">
+            <h3>Browse the latest pitches</h3>
+            <br>
+          </div>
+
       <div class="">
 
 
 
-        <div class="pagehead">
-          <h3>Browse the latest pitches</h3>
-          <br>
-        </div>
 
-        <div class="pitchcontainer">
+        <div class="pitchContainer">
+          <ul class="pitches list-group">
 
+          </ul>
 
 
-          <div class="pitch">
-
-            <img src="/Users/Amber/Desktop/MyThinkLaunch/pitch/bootstrap/egret/images/pitchGallery/soliel.png" class="pitchpic">
-            <div class="pitch-content">
-
-
-              <h3>Soliel</h3>
-              <h5><b>Genre:</b> Fantasy</h5>
-              <p>A culinary protege struggles to save her mentor after poisoning the king</p>
-              <p><b>Open Positions</b></p>
-            </div>
-          </div>
-
-
-          <div class="pitch2">
-
-            <img src="/Users/Amber/Desktop/MyThinkLaunch/pitch/bootstrap/egret/images/pitchGallery/soliel.png" class="pitchpic">
-            <div class="pitch-content">
-
-
-              <h3>Drunken rain</h3>
-              <h5><b>Genre:</b> Drama</h5>
-              <p>Musical superstar searches for lost lover during 1920 prohibition</p>
-              <p><b>Open Positions</b></p>
-            </div>
-          </div>
-
-
-          <div class="pitch3">
-
-            <img src="/Users/Amber/Desktop/MyThinkLaunch/pitch/bootstrap/egret/images/pitchGallery/soliel.png" class="pitchpic">
-            <div class="pitch-content">
-              <h3>Love Me Not</h3>
-              <h5><b>Genre:</b> Romance</h5>
-              <p>A heartbroken florist finds love in an unlikely place</p>
-              <p><b>Open Positions</b></p>
-            </div>
           </div>
 
 
 
-          <div class="pitch3">
-
-            <img src="/Users/Amber/Desktop/MyThinkLaunch/pitch/bootstrap/egret/images/pitchGallery/soliel.png" class="pitchpic">
-            <div class="pitch-content">
-
-
-              <h3>Serial</h3>
-              <h5><b>Genre:</b> Action</h5>
-              <p>A killer wreaks havoc in a small country town</p>
-              <p><b>Open Positions</b></p>
-            </div>
-          </div>
 
         </div>
 
@@ -249,7 +204,8 @@
   <script type="text/javascript">
 
   // Step ONE: Query the HTML Document for the container element(s) you're going to fill up:
-  const pitchContainer = document.querySelector('.pitchcontainer');
+
+  const pitches = document.querySelector('.pitches');
 
   // Step TWO: Setup your URL variables that takes the link you're trying to go to + the parameters + the api key
 
@@ -268,35 +224,50 @@
     .then(data => {
       console.log(data);
       pitchData = data;
-
       // this is where you do things to your data!
+
+      pitches.innerHTML = pitchData.records.map((pitch)=>{
+        if (pitch.fields.Attachments[0].url) {
+
+          return(
+
+                `<li class='list-grouped-item'>
+                ${pitch.fields.Attachments["0"].url}
+                ${pitch.fields["Project name"]}
+                ${pitch.fields.Creator}
+                ${pitch.fields.Genre}
+                ${pitch.fields["Log Line"]}
+                ${pitch.fields.Positions}
+                </li>`
+
+          )
+
+        }
+
+
+      }).join('')
+      });
+
+
       // Let's list what we need:
 
         //Pitch Image URL
           // pitchData.records[0].fields.Attachments[0].url
 
       // here, we are putting the below HTML inside the pitchContainer element
-      pitchContainer.innerHTML = data.records.map((record) =>{
+      // pitchContainer.innerHTML = data.records.map((record) =>{
       //   // for each record in 'data.records', return the items in a certain format
-        let genre = record.fields.Genre[0] ? record.fields.Genre[0] : ''
-        return (
-           `<img src="/Users/Amber/Desktop/MyThinkLaunch/pitch/bootstrap/egret/images/pitchGallery/soliel.png" class="pitchpic">
-            <div class="pitch-content">
+      //
+      //   return (
+      //     ``
+      //   )
+      // }).join('') //this line is joining all record strings together!
 
-
-              <h3>Soliel</h3>
-              <h5><b>Genre:</b> ${genre}</h5>
-              <p>A culinary protege struggles to save her mentor after poisoning the king</p>
-              <p><b>Open Positions</b></p>
-            </div>`
-         )
-       }).join('') //this line is joining all record strings together!
-    });
 
   /** const records = document.querySelector('.records')
   records.innerHTML= data.records.fields.map((records)=>{
-    return(<li class='list-group-item'>{Creator.name}
-  ) **/
+    return(<li class='list-group-item'>/**{Creator.name}**/
+
   </script>
   </body>
 </html>
