@@ -231,13 +231,22 @@
 
           return(
 //es6 code
-                `<li class='list-grouped-item panel panel-default'>
-                <img src='${pitch.fields.Attachments[0].url}'/>
+                `<li class='list-grouped-item panel panel-default col-sm-3 pitchsize'>
+                <img src='${pitch.fields.Attachments[0].url}'class="pitchImage"/>
                 <h3 class='pitchContent'>${pitch.fields["Project name"]}</h2>
                 <h6 class='pitchContent'>${pitch.fields.Creator}</h6>
                 <h5 class='pitchContent '><span class="label label-default">${pitch.fields.Genre}</span></h5>
-                <p class='pitchContent'>${pitch.fields["Log Line"]}</p>
-                <p class='pitchContent'><b>Open Positions:</b><br>${pitch.fields.Positions}</p>
+                <div class="pitchInfo">
+                  <p class='pitchContent'>${pitch.fields["Log Line"]}</p>
+                  <p class='pitchContent'><b>Open Positions:</b><br>${pitch.fields.Positions}</p>
+                  </div>
+                  <a href="#" class="fancy-button button-line btn-col small vertical">
+
+                  More info..
+                  <span class="icon">
+                    <i class="fa fa-leaf"></i>
+                  </span>
+                </a>
                 </li>`
 
           )
